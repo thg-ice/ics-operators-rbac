@@ -3,12 +3,42 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   creationTimestamp: null
-  name: openstack-keystone-operator-manager-role
+  name: ics-operators-manager-role
 rules:
+- apiGroups:
+  - admin.ceph.ics.cloud
+  resources:
+  - keypairs
+  - keypairs/finalizers
+  - keypairs/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - admin.ceph.ics.cloud
+  resources:
+  - users
+  - users/finalizers
+  - users/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
 - apiGroups:
   - keystone.openstack.ics.cloud
   resources:
   - groups
+  - groups/finalizers
+  - groups/status
   verbs:
   - create
   - delete
@@ -17,24 +47,12 @@ rules:
   - patch
   - update
   - watch
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - groups/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - groups/status
-  verbs:
-  - get
-  - patch
-  - update
 - apiGroups:
   - keystone.openstack.ics.cloud
   resources:
   - projects
+  - projects/finalizers
+  - projects/status
   verbs:
   - create
   - delete
@@ -43,24 +61,12 @@ rules:
   - patch
   - update
   - watch
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - projects/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - projects/status
-  verbs:
-  - get
-  - patch
-  - update
 - apiGroups:
   - keystone.openstack.ics.cloud
   resources:
   - users
+  - users/finalizers
+  - users/status
   verbs:
   - create
   - delete
@@ -70,16 +76,16 @@ rules:
   - update
   - watch
 - apiGroups:
-  - keystone.openstack.ics.cloud
+  - neutron.openstack.ics.cloud
   resources:
-  - users/finalizers
+  - rbacpolicies
+  - rbacpolicies/finalizers
+  - rbacpolicies/status
   verbs:
-  - update
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - users/status
-  verbs:
+  - create
+  - delete
   - get
+  - list
   - patch
   - update
+  - watch
