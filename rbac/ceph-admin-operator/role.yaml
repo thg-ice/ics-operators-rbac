@@ -6,17 +6,6 @@ metadata:
   name: ceph-admin-operator-manager-role
 rules:
 - apiGroups:
-  - ""
-  resources:
-  - secrets
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - update
-  - watch
-- apiGroups:
   - admin.ceph.ics.cloud
   resources:
   - keypairs

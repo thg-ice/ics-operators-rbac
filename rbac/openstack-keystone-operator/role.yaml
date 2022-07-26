@@ -6,17 +6,6 @@ metadata:
   name: openstack-keystone-operator-manager-role
 rules:
 - apiGroups:
-  - ""
-  resources:
-  - secrets
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - update
-  - watch
-- apiGroups:
   - keystone.openstack.ics.cloud
   resources:
   - groups
