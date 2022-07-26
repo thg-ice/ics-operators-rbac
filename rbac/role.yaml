@@ -8,37 +8,12 @@ rules:
 - apiGroups:
   - admin.ceph.ics.cloud
   resources:
-  - keypairs
-  - keypairs/finalizers
-  - keypairs/status
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - admin.ceph.ics.cloud
-  resources:
   - users
   - users/finalizers
   - users/status
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
-  - groups
-  - groups/finalizers
-  - groups/status
+  - keypairs
+  - keypairs/finalizers
+  - keypairs/status
   verbs:
   - create
   - delete
@@ -53,17 +28,9 @@ rules:
   - projects
   - projects/finalizers
   - projects/status
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - keystone.openstack.ics.cloud
-  resources:
+  - groups
+  - groups/finalizers
+  - groups/status
   - users
   - users/finalizers
   - users/status
