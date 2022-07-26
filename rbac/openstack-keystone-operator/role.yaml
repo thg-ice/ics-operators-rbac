@@ -1,0 +1,96 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: openstack-keystone-operator-manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - groups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - groups/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - groups/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - projects
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - projects/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - projects/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - users
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - users/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - keystone.openstack.ics.cloud
+  resources:
+  - users/status
+  verbs:
+  - get
+  - patch
+  - update
