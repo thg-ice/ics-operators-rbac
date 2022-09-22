@@ -56,3 +56,17 @@ rules:
   - patch
   - update
   - watch
+- apiGroups:
+  - minio.ics.cloud
+  resources:
+  - buckets
+  - buckets/finalizers
+  - buckets/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
