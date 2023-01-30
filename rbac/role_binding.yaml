@@ -8,5 +8,5 @@ roleRef:
   name: ics-operators-manager-role
 subjects:
 - kind: ServiceAccount
-  name: automation
+  name: ice-operator-automation
   namespace: default
